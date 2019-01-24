@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="mac samba," />
 
 
 
@@ -84,13 +84,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="大家知道，在Mac系统下 可以通过Finder的前往－&amp;gt;连接服务器 来链接samba，但是如果需要通过程序来链接samba怎么办呢？其实很简单 我们用mount_smbfs命令即可命令的用法：1mount_smbfs //username:password@MACHINENAME/SHARENAME /SomeLocalFolderOfChoice
+username:用户名password:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下通过脚本挂载samba">
+<meta property="og:url" content="http://yoursite.com/2016/10/10/Mac下通过脚本挂载smb/index.html">
 <meta property="og:site_name" content="Sound of Rain">
-<meta property="og:updated_time" content="2019-01-24T03:27:27.915Z">
+<meta property="og:description" content="大家知道，在Mac系统下 可以通过Finder的前往－&amp;gt;连接服务器 来链接samba，但是如果需要通过程序来链接samba怎么办呢？其实很简单 我们用mount_smbfs命令即可命令的用法：1mount_smbfs //username:password@MACHINENAME/SHARENAME /SomeLocalFolderOfChoice
+username:用户名password:">
+<meta property="og:updated_time" content="2019-01-24T06:12:17.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Mac下通过脚本挂载samba">
+<meta name="twitter:description" content="大家知道，在Mac系统下 可以通过Finder的前往－&amp;gt;连接服务器 来链接samba，但是如果需要通过程序来链接samba怎么办呢？其实很简单 我们用mount_smbfs命令即可命令的用法：1mount_smbfs //username:password@MACHINENAME/SHARENAME /SomeLocalFolderOfChoice
+username:用户名password:">
 
 
 
@@ -111,15 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/10/Mac下通过脚本挂载smb/"/>
 
-  <title>
-  
-
-  
-    分类 | Sound of Rain
-  
-</title>
+  <title> Mac下通过脚本挂载samba | Sound of Rain </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -140,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,16 +240,148 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="category-all-page">
-        <div class="category-all-title">
-            目前共计 2 个分类
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac下通过脚本挂载samba
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-10T22:47:24+08:00" content="2016-10-10">
+              2016-10-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/mac/" itemprop="url" rel="index">
+                    <span itemprop="name">mac</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/10/Mac下通过脚本挂载smb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/10/Mac下通过脚本挂载smb/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大家知道，在Mac系统下 可以通过Finder的前往－&gt;连接服务器 来链接samba，但是如果需要通过程序来链接samba怎么办呢？<br>其实很简单 我们用mount_smbfs命令即可<br>命令的用法：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount_smbfs //username:password@MACHINENAME/SHARENAME /SomeLocalFolderOfChoice</div></pre></td></tr></table></figure></p>
+<p>username:用户名<br>password:密码<br>MACHINENAME:服务器的ip地址<br>SHARENAME:服务器上共享的目录<br>SomeLocalFolderOfChoice:要挂载的本地目录</p>
+<p>注意服务器目录和本地目录必须是要存在的 否则会报错<br>如果password中包含特殊字符比如‘@’之类的 也会出错 因为在命令中，@是用来分割用户密码和服务器路径的这个时候要怎么办呢， 编码！ 如果你在IE浏览器的打开url中也包含这些特殊字符的话，浏览器会自动编码<br>这个编码就是取浏览器的ASCII码， 比如你的密码是 ＃@ert123!) 编码后就是’%21%BC%83%C2%A5ert123%21%29’<br>这样就能正常挂在了，如果是用python， 那就更方便了， python的urllib能直接将字符串编码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">form urllib <span class="keyword">import</span> quote</div><div class="line">password = <span class="string">"＃@ert123!)"</span></div><div class="line"><span class="keyword">print</span> quote(passowrd)</div></pre></td></tr></table></figure></p>
+<p>通过quote函数我们能直接将字符串编码。很方便</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mac-samba/" rel="tag">#mac samba</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/11/github 灰色文件夹解决办法/" rel="next" title="github 灰色文件夹解决办法">
+                <i class="fa fa-chevron-left"></i> github 灰色文件夹解决办法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -258,6 +390,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/10/Mac下通过脚本挂载smb/"
+           data-title="Mac下通过脚本挂载samba" data-url="http://yoursite.com/2016/10/10/Mac下通过脚本挂载smb/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -277,8 +417,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar.png"
@@ -328,6 +477,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -431,6 +591,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
